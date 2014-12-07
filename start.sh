@@ -1,2 +1,2 @@
 #!/bin/bash
-nodejs bot.js > log.txt
+node bot.js > log.txt
