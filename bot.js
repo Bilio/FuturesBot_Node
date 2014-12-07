@@ -3,7 +3,7 @@ var mqtt = require('mqtt')
 client.subscribe('BOT/TX00');
 var xmpp = require('simple-xmpp');
 
-mpp.on('error', function(err) {
+xmpp.on('error', function(err) {
             console.error(err);
 });         
 
