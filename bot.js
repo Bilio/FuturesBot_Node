@@ -1,11 +1,17 @@
+var d = new Date().getTime();
 var mqtt = require('mqtt')
-  , client = mqtt.connect('mqtt://user:tradingbot@m2m.tradingbot.com.tw?clientId=koding_client');
+  , client = mqtt.connect('mqtt://user:tradingbot@m2m.tradingbot.com.tw?clientId=koding_client'+ d.toString());
 client.subscribe('BOT/TX00');
 var xmpp = require('simple-xmpp');
 
 xmpp.on('error', function(err) {
             console.error(err);
-});         
+});
+
+xmpp.on('online', function(data) {
+    console.log('Connected with JID: ' + data.jid.user);
+    console.log('Yes, I\'m connected!');
+});
 
 xmpp.connect({
                 jid                 : 'yourname@gmail.com',
